@@ -15,7 +15,7 @@
     "font-awesome"
   ],
   "author": "Diego A. Zapata Häntsch <diegoazh2003@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-free-webfonts": "^1.0.5"
   },

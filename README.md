@@ -2,7 +2,6 @@
 
 This plugin provides simple functionality to add font awesome 5 icons in your vue components.
 This plugin works with fontawesome.css stylesheet not with svg javascript.
-
 Is a very simple plugin that provides this functionalityk.
 
 ## Install
