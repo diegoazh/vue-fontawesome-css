@@ -12,7 +12,7 @@ npm install vue-fontawesome-css [--save]
 
 ## Dependencies
 
-This package depends on '@fortawesome/fontawesome-free-webfonts'
+- This package depends on '@fortawesome/fontawesome-free-webfonts'
 
 ## Usage
 
