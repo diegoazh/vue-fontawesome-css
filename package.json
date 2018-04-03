@@ -1,0 +1,30 @@
+{
+  "name": "vue-fontawesome-css",
+  "version": "1.0.0",
+  "description": "A simple vue component for display icons with font-awesome css",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=6.9.5"
+  },
+  "scripts": {
+    "lint": "eslint src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "font-awesome"
+  ],
+  "author": "Diego A. Zapata Häntsch <diegoazh2003@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.5"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-eslint": "8.2.2",
+    "babel-preset-env": "1.6.1",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-plugin-import": "2.10.0"
+  }
+}
