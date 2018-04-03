@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import '../node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-brands.css';
-import '../node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-regular.css';
-import '../node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-solid.css';
-import '../node_modules/@fortawesome/fontawesome-free-webfonts/css/fontawesome.css';
+import '@fortawesome/fontawesome-free-webfonts/css/fa-brands.css';
+import '@fortawesome/fontawesome-free-webfonts/css/fa-regular.css';
+import '@fortawesome/fontawesome-free-webfonts/css/fa-solid.css';
+import '@fortawesome/fontawesome-free-webfonts/css/fontawesome.css';
 
 export default {
   name: 'icon-app',
