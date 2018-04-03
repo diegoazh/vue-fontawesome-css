@@ -40,9 +40,6 @@ export default {
       if (this.otherClasses) classes += ' ' + this.otherClasses;
 
       return classes;
-    },
-    iconId() {
-      return this.iconId;
     }
   }
 };
