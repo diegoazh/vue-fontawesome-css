@@ -34,7 +34,7 @@ const app = new Vue({
 - Second use the xml tag `<fa-icon />` in your html
 
 ```html
-<fa-icon icon="user-circle" icon-id="botonProfile" other-classes="my-bg-color" />
+<fa-icon icon="user-circle" icon-id="buttonProfile" other-classes="my-bg-color" />
 ```
 
 or
