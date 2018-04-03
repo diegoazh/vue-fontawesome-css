@@ -54,8 +54,8 @@ or
 
 ## Repository
 
-[https://github.com/diegoazh/](https://github.com/diegoazh/)
+[https://github.com/diegoazh/vue-fontawesome-css](https://github.com/diegoazh/vue-fontawesome-css)
 
 ## License
 
-"ISC"
+"MIT"
