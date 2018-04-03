@@ -14,8 +14,16 @@
     "vue",
     "font-awesome"
   ],
-  "author": "Diego A. Zapata Häntsch <diegoazh2003@gmail.com>",
+  "author": "Diego A. Zapata Häntsch <diegoazh2003@gmail.com> (https://github.com/diegoazh)",
   "license": "MIT",
+  "repository" : {
+    "type" : "git",
+    "url" : "git+https://github.com/diegoazh/vue-fontawesome-css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diegoazh/vue-fontawesome-css/issues"
+  },
+  "homepage": "https://github.com/diegoazh/vue-fontawesome-css",
   "dependencies": {
     "@fortawesome/fontawesome-free-webfonts": "^1.0.5"
   },

@@ -10,6 +10,10 @@ Is a very simple plugin that provides this functionalityk.
 npm install vue-fontawesome-css [--save]
 ```
 
+## Dependencies
+
+This package depends on '@fortawesome/fontawesome-free-webfonts'
+
 ## Usage
 
 - First import and install plugin
@@ -27,7 +31,7 @@ const app = new Vue({
 })
 ```
 
-- Second use the xml tag in your html
+- Second use the xml tag `<fa-icon />` in your html
 
 ```html
 <fa-icon icon="user-circle" icon-id="botonProfile" other-classes="my-bg-color" />
