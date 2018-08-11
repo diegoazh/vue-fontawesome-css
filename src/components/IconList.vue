@@ -30,7 +30,7 @@
 import Icon from './Icon.vue';
 
 export default {
-  name: 'v-icon-list',
+  name: 'IconList',
   props: {
     items: {
       type: Array,

@@ -9,7 +9,7 @@ import '@fortawesome/fontawesome-free-webfonts/css/fa-solid.css';
 import '@fortawesome/fontawesome-free-webfonts/css/fontawesome.css';
 
 export default {
-  name: 'v-icon',
+  name: 'Icon',
   props: {
     fas: {
       type: Boolean,
