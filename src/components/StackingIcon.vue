@@ -16,6 +16,16 @@
       :pull_right="container && container.pull_right"
       :border="container && container.border"
       :inverse="container && container.inverse"
+      :shrink="container && container.shrink"
+      :grow="container && container.grow"
+      :up="container && container.up"
+      :down="container && container.down"
+      :left="container && container.left"
+      :right="container && container.right"
+      :transformRotate="container && container.transformRotate"
+      :transformFlip="container && container.transformFlip"
+      :maskType="container && container.maskType"
+      :mask="container && container.mask"
       :id="container && container.id"
       :class="container && container.class"
     />
@@ -35,6 +45,16 @@
       :pull_right="icon && icon.pull_right"
       :border="icon && icon.border"
       :inverse="icon && icon.inverse"
+      :shrink="icon && icon.shrink"
+      :grow="icon && icon.grow"
+      :up="icon && icon.up"
+      :down="icon && icon.down"
+      :left="icon && icon.left"
+      :right="icon && icon.right"
+      :transformRotate="icon && icon.transformRotate"
+      :transformFlip="icon && icon.transformFlip"
+      :maskType="icon && icon.maskType"
+      :mask="icon && icon.mask"
       :id="icon && icon.id"
       :class="icon && icon.class"
     />
@@ -46,9 +66,6 @@ import Icon from './Icon.vue';
 
 export default {
   name: 'StackingIcon',
-  data () {
-    return {}
-  },
   props: {
     container: {
       type: Object,

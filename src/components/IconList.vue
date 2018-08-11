@@ -18,6 +18,16 @@
           :pull_right="item.icon && item.icon.pull_right"
           :border="item.icon && item.icon.border"
           :inverse="item.icon && item.icon.inverse"
+          :shrink="item.icon && item.icon.shrink"
+          :grow="item.icon && item.icon.grow"
+          :up="item.icon && item.icon.up"
+          :down="item.icon && item.icon.down"
+          :left="item.icon && item.icon.left"
+          :right="item.icon && item.icon.right"
+          :transformRotate="item.icon && item.icon.transformRotate"
+          :transformFlip="item.icon && item.icon.transformFlip"
+          :maskType="item.icon && item.icon.maskType"
+          :mask="item.icon && item.icon.mask"
           :id="item.icon && item.icon.id"
           :class="item.icon && item.icon.class"
         />
@@ -62,6 +72,17 @@ export default {
       type: [String, Array],
       default: '',
       required: false,
+      validator(value) {
+        let nonOk = 0;
+        if (Array.isArray(value)) {
+          value.forEach((el) => {
+            if (typeof el !== 'string') nonOk++;
+          });
+        } else if (typeof value !== 'string') {
+          nonOk++;
+        }
+        return Boolean(!nonOk);
+      },
     },
     liId: {
       type: Array,
@@ -79,6 +100,13 @@ export default {
       type: Array,
       default: [],
       required: false,
+      validator(value) {
+        let nonstr = 0;
+        value.forEach(el => {
+          if (typeof el !== 'string') nonstr++;
+        });
+        return Boolean(!nonstr);
+      }
     },
     spanId: {
       type: Array,
@@ -96,6 +124,13 @@ export default {
       type: Array,
       default: [],
       required: false,
+      validator(value) {
+        let nonstr = 0;
+        value.forEach(el => {
+          if (typeof el !== 'string') nonstr++;
+        });
+        return Boolean(!nonstr);
+      }
     },
   },
   computed: {

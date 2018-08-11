@@ -1,5 +1,9 @@
 <template>
-  <i :id="defineId" :class="defineClass" aria-hidden="true"></i>
+  <i :id="defineId"
+    :class="defineClass"
+    aria-hidden="true"
+    :data-fa-transform="parseTransform"
+    :data-fa-mask="parseMask"></i>
 </template>
 
 <script>
@@ -14,105 +18,292 @@ export default {
     fas: {
       type: Boolean,
       default: false,
-      required: false
+      required: false,
+      validator(value) {
+        return typeof value === 'boolean';
+      },
     },
     far: {
       type: Boolean,
       default: false,
-      required: false
+      required: false,
+      validator(value) {
+        return typeof value === 'boolean';
+      },
     },
     fal: {
       type: Boolean,
       default: false,
-      required: false
+      required: false,
+      validator(value) {
+        return typeof value === 'boolean';
+      },
     },
     fab: {
       type: Boolean,
       default: false,
-      required: false
+      required: false,
+      validator(value) {
+        return typeof value === 'boolean';
+      },
     },
     name: {
       type: String,
       default: 'user',
-      required: false
+      required: false,
+      validator(value) {
+        return typeof value === 'string';
+      },
     },
     size: {
       type: String,
       default: '',
       required: false,
+      validator(value) {
+        return typeof value === 'string';
+      },
     },
     fw: {
       type: Boolean,
       default: false,
-      required: false
+      required: false,
+      validator(value) {
+        return typeof value === 'boolean';
+      },
     },
     rotate: {
       type: String,
       default: '',
       required: false,
+      validator(value) {
+        return typeof value === 'string';
+      },
     },
     flip: {
       type: String,
       default: '',
       required: false,
+      validator(value) {
+        return typeof value === 'string';
+      },
     },
     spin: {
       type: Boolean,
       default: false,
       required: false,
+      validator(value) {
+        return typeof value === 'boolean';
+      },
     },
     pulse: {
       type: Boolean,
       default: false,
       required: false,
+      validator(value) {
+        return typeof value === 'boolean';
+      },
     },
     pullLeft: {
       type: Boolean,
       default: false,
       required: false,
+      validator(value) {
+        return typeof value === 'boolean';
+      },
     },
     pullRight: {
       type: Boolean,
       default: false,
       required: false,
+      validator(value) {
+        return typeof value === 'boolean';
+      },
     },
     border: {
       type: Boolean,
       default: false,
       required: false,
+      validator(value) {
+        return typeof value === 'boolean';
+      },
     },
     inverse: {
       type: Boolean,
       default: false,
       required: false,
+      validator(value) {
+        return typeof value === 'boolean';
+      },
+    },
+    shrink: {
+      type: Number,
+      default: 0,
+      required: false,
+      validator(value) {
+        return typeof value === 'number';
+      },
+    }
+    grow: {
+      type: Number,
+      default: 0,
+      required: false,
+      validator(value) {
+        return typeof value === 'number';
+      },
+    }
+    up: {
+      type: [Number, String],
+      default: 0,
+      required: false,
+      validator(value) {
+        return typeof value === 'number' || typeof value === 'string';
+      },
+    }
+    down: {
+      type: [Number, String],
+      default: 0,
+      required: false,
+      validator(value) {
+        return typeof value === 'number' || typeof value === 'string';
+      },
+    }
+    left: {
+      type: [Number, String],
+      default: 0,
+      required: false,
+      validator(value) {
+        return typeof value === 'number' || typeof value === 'string';
+      },
+    }
+    right: {
+      type: [Number, String],
+      default: 0,
+      required: false,
+      validator(value) {
+        return typeof value === 'number' || typeof value === 'string';
+      },
+    },
+    transformRotate: {
+      type: [Number, String],
+      default: 0,
+      required: false,
+      validator(value) {
+        return (typeof value === 'number' || typeof value === 'string');
+      },
+    },
+    transformFlip: {
+      type: [Array, String],
+      default: 0,
+      required: false,
+      validator(value) {
+        let nonOk = 0;
+        if (Array.isArray(value)) {
+          value.forEach((el) => {
+            if (typeof el !== 'string') nonOk++;
+          });
+        } else if (typeof value !== 'string') {
+          nonOk++;
+        }
+        return Boolean(!nonOk);
+      },
+    },
+    maskType: {
+      type: String,
+      default: '',
+      required: false,
+      validator(value) {
+        return ['fas', 'far', 'fab', 'fal'].indexOf(value) !== -1;
+      },
+    },
+    mask: {
+      type: String,
+      default: '',
+      required: false,
+      validator(value) {
+        return typeof value === 'string';
+      },
     },
     id: {
       type: String,
       default: '',
-      required: false
+      required: false,
+      validator(value) {
+        return typeof value === 'string';
+      },
     },
     class: {
       type: String,
       default: '',
-      required: false
+      required: false,
+      validator(value) {
+        return typeof value === 'string';
+      },
     },
     icon: {
       type: [String, Array],
       default: 'fas',
-      required: false
+      required: false,
+      validator(value) {
+        let nonOk = 0;
+        if (Array.isArray(value)) {
+          value.forEach((el) => {
+            if (typeof el !== 'string') nonOk++;
+          });
+        } else if (typeof value !== 'string') {
+          nonOk++;
+        }
+        return Boolean(!nonOk);
+      },
     },
     iconId: {
       type: String,
       default: '',
-      required: false
+      required: false,
+      validator(value) {
+        return typeof value === 'string';
+      },
     },
     otherClasses: {
       type: String,
       default: '',
-      required: false
+      required: false,
+      validator(value) {
+        return typeof value === 'string';
+      },
     }
   },
   computed: {
+    parseTransform() {
+      let transform = '';
+      if (this.shrink) {
+        transform += `shrink-${this.shrink}`;
+      } else if (this.grow) {
+        transform += `grow-${this.grow}`;
+      }
+      if (this.up) {
+        !transform ? transform += `up-${this.up}` : transform += ` up-${this.up}`;
+      } else if (this.down) {
+        !transform ? transform += `down-${this.down}` : transform += ` down-${this.down}`;
+      }
+      if (this.left) {
+        !transform ? transform += `left-${this.left}` : transform += ` left-${this.left}`;
+      } else if (this.right) {
+        !transform ? transform += `right-${this.right}` : transform += ` right-${this.right}`;
+      }
+      if (this.transformRotate) {
+        !transform ? transform += `rotate-${this.transformRotate}` : transform += ` rotate-${this.transformRotate}`;
+      }
+      if (this.transformFlip) {
+        !transform ? transform += `flip-${this.transformFlip}` : transform += ` flip-${this.transformFlip}`;
+      }
+
+      return transform;
+    },
+    parseMask() {
+      if (this.maskType && this.mask) {
+        return `${this.maskType} fa-${this.mask}`;
+      }
+    },
     defineId() {
       return id || iconId;
     },

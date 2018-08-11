@@ -1,6 +1,7 @@
 import Icon from './components/icon.vue';
 import IconList from './components/IconList.vue';
 import StackingIcon from './components/StackingIcon.vue';
+import LayersIcocns from './components/LayersIcocns.vue';
 
 const VueFontAwesomeCss = {
   install: (Vue) => {
@@ -8,6 +9,7 @@ const VueFontAwesomeCss = {
     Vue.component('v-icon', Icon);
     Vue.component('v-icon-list', IconList);
     Vue.component('v-stacking-icon', StackingIcon);
+    Vue.component('v-layers-icons', LayersIcocns);
   },
 };
 
