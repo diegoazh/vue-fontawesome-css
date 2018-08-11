@@ -13,7 +13,7 @@ export default {
   props: {
     fas: {
       type: Boolean,
-      default: true,
+      default: false,
       required: false
     },
     far: {
@@ -66,12 +66,12 @@ export default {
       default: false,
       required: false,
     },
-    pull_left: {
+    pullLeft: {
       type: Boolean,
       default: false,
       required: false,
     },
-    pull_right: {
+    pullRight: {
       type: Boolean,
       default: false,
       required: false,
@@ -134,7 +134,7 @@ export default {
 
       this.spin ? classes += ` fa-spin` : this.pulse ? ` fa-pulse` : null;
 
-      this.pull_left ? classes += ' fa-pull-left' : this.pull_right ? ' fa-pull-right' : null;
+      this.pullLeft ? classes += ' fa-pull-left' : this.pullRight ? ' fa-pull-right' : null;
 
       this.border ? classes += ' fa-border' : null;
 
