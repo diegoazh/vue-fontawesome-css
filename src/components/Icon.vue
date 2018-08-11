@@ -81,6 +81,11 @@ export default {
       default: false,
       required: false,
     },
+    inverse: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
     id: {
       type: String,
       default: '',
@@ -137,6 +142,8 @@ export default {
       this.pullLeft ? classes += ' fa-pull-left' : this.pullRight ? ' fa-pull-right' : null;
 
       this.border ? classes += ' fa-border' : null;
+
+      this.inverse ? classes += ' fa-inverse' : null;
 
       this.class ? classes += ` ${this.class}` : this.otherClasses ? classes += ` ${this.otherClasses}` : null;
 

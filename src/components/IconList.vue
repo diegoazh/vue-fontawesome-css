@@ -17,6 +17,7 @@
           :pull_left="item.icon && item.icon.pull_left"
           :pull_right="item.icon && item.icon.pull_right"
           :border="item.icon && item.icon.border"
+          :inverse="item.icon && item.icon.inverse"
           :id="item.icon && item.icon.id"
           :class="item.icon && item.icon.class"
         />
