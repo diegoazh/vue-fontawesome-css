@@ -7,6 +7,7 @@
       :fal="container && container.fal"
       :name="container && container.name"
       :size="container && container.size"
+      :stack="container && container.stack"
       :fw="container && container.fw"
       :rotate="container && container.rotate"
       :flip="container && container.flip"
@@ -36,6 +37,7 @@
       :fal="icon && icon.fal"
       :name="icon && icon.name"
       :size="icon && icon.size"
+      :stack="icon && icon.stack"
       :fw="icon && icon.fw"
       :rotate="icon && icon.rotate"
       :flip="icon && icon.flip"
@@ -70,11 +72,6 @@ export default {
     container: {
       type: Object,
       required: true,
-      default: () => ({
-        fas: true,
-        name: 'square',
-        stack: '2x',
-      }),
       validator(value) {
         return (typeof value === 'object' && !Array.isArray(value));
       },
@@ -82,12 +79,6 @@ export default {
     icon: {
       type: Object,
       required: true,
-      default: () => ({
-        fab: true,
-        name: 'twitter',
-        stack: '1x',
-        inverse: true,
-      }),
       validator(value) {
         return (typeof value === 'object' && !Array.isArray(value));
       },
@@ -95,7 +86,6 @@ export default {
     spanId: {
       type: String,
       required: false,
-      default: '',
       validator(value) {
         return typeof value === 'string';
       },
@@ -103,7 +93,6 @@ export default {
     spanClass: {
       type: [String, Array],
       required: false,
-      default: '',
       validator(value) {
         let nonOk = 0;
         if (Array.isArray(value)) {

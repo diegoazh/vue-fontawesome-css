@@ -8,8 +8,8 @@ const VueFontAwesomeCss = {
     Vue.component('fa-icon', Icon);
     Vue.component('v-icon', Icon);
     Vue.component('v-icon-list', IconList);
-    Vue.component('v-stacking-icon', StackingIcon);
-    Vue.component('v-layers-icons', LayersIcocns);
+    Vue.component('v-icon-stack', StackingIcon);
+    Vue.component('v-icon-layer', LayersIcocns);
   },
 };
 

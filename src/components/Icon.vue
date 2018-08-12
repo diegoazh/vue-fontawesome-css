@@ -62,6 +62,13 @@ export default {
         return typeof value === 'string';
       },
     },
+    stack: {
+      type: String,
+      required: false,
+      validator(value) {
+        return typeof value === 'string';
+      },
+    },
     fw: {
       type: Boolean,
       default: false,
@@ -293,6 +300,8 @@ export default {
       if (this.size) classes += ` fa-${this.size}`;
 
       if (this.fw) classes += ' fa-fw';
+
+      if (this.stack) classes += ` fa-stack-${this.stack}`
 
       if (this.rotate) classes += ` fa-rotate-${this.rotate}`;
 

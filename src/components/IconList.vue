@@ -9,6 +9,7 @@
           :fal="item.icon && item.icon.fal"
           :name="item.icon && item.icon.name"
           :size="item.icon && item.icon.size"
+          :stack="item.icon && item.icon.stack"
           :fw="item.icon && item.icon.fw"
           :rotate="item.icon && item.icon.rotate"
           :flip="item.icon && item.icon.flip"
@@ -45,12 +46,6 @@ export default {
   props: {
     items: {
       type: Array,
-      default: () => ([
-        {
-          icon: {},
-          text: '',
-        },
-      ]),
       required: true,
       validator(value) {
         let notOk = 0;
@@ -62,7 +57,6 @@ export default {
     },
     ulId: {
       type: String,
-      default: '',
       required: false,
       validator(value) {
         return typeof value === 'string';
@@ -70,7 +64,6 @@ export default {
     },
     ulClass: {
       type: [String, Array],
-      default: '',
       required: false,
       validator(value) {
         let nonOk = 0;
@@ -86,7 +79,6 @@ export default {
     },
     liId: {
       type: Array,
-      default: () => ([]),
       required: false,
       validator(value) {
         let nonstr = 0;
@@ -98,7 +90,6 @@ export default {
     },
     liClass: {
       type: Array,
-      default: () => ([]),
       required: false,
       validator(value) {
         let nonstr = 0;
@@ -110,7 +101,6 @@ export default {
     },
     spanId: {
       type: Array,
-      default: () => ([]),
       required: false,
       validator(value) {
         let nonstr = 0;
@@ -122,7 +112,6 @@ export default {
     },
     spanClass: {
       type: Array,
-      default: () => ([]),
       required: false,
       validator(value) {
         let nonstr = 0;

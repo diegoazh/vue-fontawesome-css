@@ -7,6 +7,7 @@
       :fal="item.icon && item.icon.fal"
       :name="item.icon && item.icon.name"
       :size="item.icon && item.icon.size"
+      :stack="item.icon && item.icon.stack"
       :fw="item.icon && item.icon.fw"
       :rotate="item.icon && item.icon.rotate"
       :flip="item.icon && item.icon.flip"
@@ -49,30 +50,19 @@ export default {
     icons: {
       type: Array,
       required: true,
-      default: () => ([]),
       validator(value) {
-        return Array.isArray(value);
+        let nonOk = 0;
+        if (Array.isArray(value)) {
+          value.forEach((el) => {
+            if (typeof value !== 'object' || Array.isArray(el)) nonOk++;
+          });
+        }
+        return Boolean(!nonOk);
       },
     },
     text: {
       type: Object,
       required: false,
-      default: () => ({
-        message: 'NEW',
-        transform: {
-          shrink: '',
-          grow: '',
-          up: '',
-          down: '',
-          left: '',
-          right: '',
-          rotate: '',
-          flip: '',
-        },
-        id: '',
-        class: [],
-        style: [],
-      }),
       validator(value) {
         return typeof value === 'object' && !Array.isArray(value);
       },
@@ -80,22 +70,6 @@ export default {
     counter: {
       type: Object,
       required: false,
-      default: () => ({
-        number: 100,
-        transform: {
-          shrink: '',
-          grow: '',
-          up: '',
-          down: '',
-          left: '',
-          right: '',
-          rotate: '',
-          flip: '',
-        },
-        id: '',
-        class: [],
-        style: [],
-      }),
       validator(value) {
         return typeof value === 'object' && !Array.isArray(value);
       },
@@ -103,7 +77,6 @@ export default {
     spanId: {
       type: String,
       required: false,
-      default: '',
       validator(value) {
         return typeof value === 'string';
       },
@@ -111,7 +84,6 @@ export default {
     spanClass: {
       type: [String, Array],
       required: false,
-      default: '',
       validator(value) {
         let nonOk = 0;
         if (Array.isArray(value)) {
