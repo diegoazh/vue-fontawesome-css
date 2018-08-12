@@ -295,7 +295,8 @@ export default {
     defineClass() {
       let classes = '';
 
-      this.fas ? classes += 'fas ' : this.far ? classes += 'far ' : this.fal ? classes += 'fal ' : classes += 'fab ';
+      this.fal ? classes += 'fal ' : this.fab ? classes += 'fab ' :
+        this.far ? classes += 'far ' : this.fas ? classes += 'fas ' : classes += 'fa ';
 
       if (this.name) {
         classes += `fa-${this.name}`;
