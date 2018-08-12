@@ -301,7 +301,7 @@ export default {
 
       if (this.fw) classes += ' fa-fw';
 
-      if (this.stack) classes += ` fa-stack-${this.stack}`
+      if (this.stack) classes += ` fa-stack-${this.stack}`;
 
       if (this.rotate) classes += ` fa-rotate-${this.rotate}`;
 
