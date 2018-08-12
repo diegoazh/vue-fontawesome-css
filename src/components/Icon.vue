@@ -223,22 +223,6 @@ export default {
         return typeof value === 'string';
       },
     },
-    id: {
-      type: String,
-      default: '',
-      required: false,
-      validator(value) {
-        return typeof value === 'string';
-      },
-    },
-    class: {
-      type: String,
-      default: '',
-      required: false,
-      validator(value) {
-        return typeof value === 'string';
-      },
-    },
     icon: {
       type: [String, Array],
       default: 'fas',
@@ -336,7 +320,7 @@ export default {
 
       this.inverse ? classes += ' fa-inverse' : null;
 
-      this.class ? classes += ` ${this.class}` : this.otherClasses ? classes += ` ${this.otherClasses}` : null;
+      this.otherClasses ? classes += ` ${this.otherClasses}` : null;
 
       return classes;
     },

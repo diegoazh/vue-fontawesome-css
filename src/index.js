@@ -1,7 +1,7 @@
-import Icon from './components/icon.vue';
+import Icon from './components/Icon.vue';
 import IconList from './components/IconList.vue';
 import StackingIcon from './components/StackingIcon.vue';
-import LayersIcocns from './components/LayersIcocns.vue';
+import LayersIcocns from './components/LayersIcons.vue';
 
 const VueFontAwesomeCss = {
   install: (Vue) => {
