@@ -212,7 +212,8 @@ export default {
       default: '',
       required: false,
       validator(value) {
-        return ['fas', 'far', 'fab', 'fal'].indexOf(value) !== -1;
+        if (value) return ['fas', 'far', 'fab', 'fal'].indexOf(value) !== -1;
+        else return true;
       },
     },
     mask: {
