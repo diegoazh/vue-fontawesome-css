@@ -290,7 +290,7 @@ export default {
       }
     },
     defineId() {
-      return id || iconId;
+      return this.iconId;
     },
     defineClass() {
       let classes = '';

@@ -12,6 +12,7 @@ module.exports = {
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '\\.(css|scss)$': '<rootDir>/node_modules/jest-css-modules',
   },
   collectCoverage: true,
   collectCoverageFrom: [
