@@ -142,7 +142,7 @@ export default {
       validator(value) {
         return typeof value === 'number';
       },
-    }
+    },
     grow: {
       type: Number,
       default: 0,
@@ -150,7 +150,7 @@ export default {
       validator(value) {
         return typeof value === 'number';
       },
-    }
+    },
     up: {
       type: [Number, String],
       default: 0,
@@ -158,7 +158,7 @@ export default {
       validator(value) {
         return typeof value === 'number' || typeof value === 'string';
       },
-    }
+    },
     down: {
       type: [Number, String],
       default: 0,
@@ -166,7 +166,7 @@ export default {
       validator(value) {
         return typeof value === 'number' || typeof value === 'string';
       },
-    }
+    },
     left: {
       type: [Number, String],
       default: 0,
@@ -174,7 +174,7 @@ export default {
       validator(value) {
         return typeof value === 'number' || typeof value === 'string';
       },
-    }
+    },
     right: {
       type: [Number, String],
       default: 0,
@@ -193,7 +193,7 @@ export default {
     },
     transformFlip: {
       type: [Array, String],
-      default: 0,
+      default: '',
       required: false,
       validator(value) {
         let nonOk = 0;
@@ -270,7 +270,7 @@ export default {
       validator(value) {
         return typeof value === 'string';
       },
-    }
+    },
   },
   computed: {
     parseTransform() {
@@ -339,7 +339,7 @@ export default {
       this.class ? classes += ` ${this.class}` : this.otherClasses ? classes += ` ${this.otherClasses}` : null;
 
       return classes;
-    }
-  }
+    },
+  },
 };
 </script>

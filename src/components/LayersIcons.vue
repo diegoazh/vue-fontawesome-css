@@ -29,7 +29,7 @@
       :id="item.icon && item.icon.id"
       :class="item.icon && item.icon.class"
     />
-    <span v-if="text.message" :id="text.id" 
+    <span v-if="text.message" :id="text.id"
       :class="['fa-layers-text', 'fa-inverse', parseClass(text.class)]"
       :data-fa-transform="parseTransform(text.transform)"
       :style="parseClass(text.style)">{{ text.message }}</span>
@@ -49,7 +49,7 @@ export default {
     icons: {
       type: Array,
       required: true,
-      default: [],
+      default: () => ([]),
       validator(value) {
         return Array.isArray(value);
       },
@@ -71,7 +71,7 @@ export default {
         },
         id: '',
         class: [],
-        style: []
+        style: [],
       }),
       validator(value) {
         return typeof value === 'object' && !Array.isArray(value);
@@ -98,7 +98,7 @@ export default {
       }),
       validator(value) {
         return typeof value === 'object' && !Array.isArray(value);
-      }
+      },
     },
     spanId: {
       type: String,
@@ -123,7 +123,7 @@ export default {
         }
         return Boolean(!nonOk);
       },
-    }
+    },
   },
   methods: {
     parseClass(prop) {
@@ -163,5 +163,5 @@ export default {
   components: {
     'v-icon': Icon,
   },
-}
+};
 </script>

@@ -1,6 +1,6 @@
 <template>
   <span :id="spanId" :class="['fa-stack fa-2x', parseSpanClass]">
-    <v-icon 
+    <v-icon
       :fas="container && container.fas"
       :far="container && container.far"
       :fab="container && container.fab"
@@ -29,7 +29,7 @@
       :id="container && container.id"
       :class="container && container.class"
     />
-    <v-icon 
+    <v-icon
       :fas="icon && icon.fas"
       :far="icon && icon.far"
       :fab="icon && icon.fab"
@@ -70,26 +70,26 @@ export default {
     container: {
       type: Object,
       required: true,
-      default: {
+      default: () => ({
         fas: true,
         name: 'square',
         stack: '2x',
-      },
+      }),
       validator(value) {
-        return (typeof value === 'object' && !Array.isArray(value))
+        return (typeof value === 'object' && !Array.isArray(value));
       },
     },
     icon: {
       type: Object,
       required: true,
-      default: {
+      default: () => ({
         fab: true,
         name: 'twitter',
         stack: '1x',
         inverse: true,
-      },
+      }),
       validator(value) {
-        return (typeof value === 'object' && !Array.isArray(value))
+        return (typeof value === 'object' && !Array.isArray(value));
       },
     },
     spanId: {
@@ -115,7 +115,7 @@ export default {
         }
         return Boolean(!nonOk);
       },
-    }
+    },
   },
   computed: {
     parseSpanClass() {
@@ -129,5 +129,5 @@ export default {
   components: {
     'v-icon': Icon,
   },
-}
+};
 </script>

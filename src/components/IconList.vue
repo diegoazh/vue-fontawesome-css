@@ -2,7 +2,7 @@
   <ul :id="ulId" :class="['fa-ul', parseUlClass]">
     <li v-for="(item, index) in items" :key="index" :id="liId[index]" :class="parseClassInIndex(liClass, index)">
       <span :id="spanId[index]" :class="['fa-li', parseClassInIndex(spanClass, index)]">
-        <v-icon 
+        <v-icon
           :fas="item.icon && item.icon.fas"
           :far="item.icon && item.icon.far"
           :fab="item.icon && item.icon.fab"
@@ -45,20 +45,20 @@ export default {
   props: {
     items: {
       type: Array,
-      default: [
+      default: () => ([
         {
           icon: {},
           text: '',
-        }
-      ],
+        },
+      ]),
       required: true,
       validator(value) {
         let notOk = 0;
-        value.forEach(el => {
-          if (!el.icon || !el.text) notOk++
+        value.forEach((el) => {
+          if (!el.icon || !el.text) notOk++;
         });
         return Boolean(!notOk);
-      }
+      },
     },
     ulId: {
       type: String,
@@ -86,51 +86,51 @@ export default {
     },
     liId: {
       type: Array,
-      default: [],
+      default: () => ([]),
       required: false,
       validator(value) {
         let nonstr = 0;
-        value.forEach(el => {
+        value.forEach((el) => {
           if (typeof el !== 'string') nonstr++;
         });
         return Boolean(!nonstr);
-      }
+      },
     },
     liClass: {
       type: Array,
-      default: [],
+      default: () => ([]),
       required: false,
       validator(value) {
         let nonstr = 0;
-        value.forEach(el => {
+        value.forEach((el) => {
           if (typeof el !== 'string') nonstr++;
         });
         return Boolean(!nonstr);
-      }
+      },
     },
     spanId: {
       type: Array,
-      default: [],
+      default: () => ([]),
       required: false,
       validator(value) {
         let nonstr = 0;
-        value.forEach(el => {
+        value.forEach((el) => {
           if (typeof el !== 'string') nonstr++;
         });
         return Boolean(!nonstr);
-      }
+      },
     },
     spanClass: {
       type: Array,
-      default: [],
+      default: () => ([]),
       required: false,
       validator(value) {
         let nonstr = 0;
-        value.forEach(el => {
+        value.forEach((el) => {
           if (typeof el !== 'string') nonstr++;
         });
         return Boolean(!nonstr);
-      }
+      },
     },
   },
   computed: {
@@ -149,10 +149,10 @@ export default {
       } else if (typeof prop[index] === 'string') {
         return prop[index];
       }
-    }
+    },
   },
   components: {
     'v-icon': Icon,
   },
-}
+};
 </script>
