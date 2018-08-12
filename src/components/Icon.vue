@@ -57,7 +57,6 @@ export default {
     },
     size: {
       type: String,
-      default: '',
       required: false,
       validator(value) {
         return typeof value === 'string';
@@ -73,7 +72,6 @@ export default {
     },
     rotate: {
       type: String,
-      default: '',
       required: false,
       validator(value) {
         return typeof value === 'string';
@@ -81,7 +79,6 @@ export default {
     },
     flip: {
       type: String,
-      default: '',
       required: false,
       validator(value) {
         return typeof value === 'string';
@@ -137,7 +134,6 @@ export default {
     },
     shrink: {
       type: Number,
-      default: 0,
       required: false,
       validator(value) {
         return typeof value === 'number';
@@ -145,7 +141,6 @@ export default {
     },
     grow: {
       type: Number,
-      default: 0,
       required: false,
       validator(value) {
         return typeof value === 'number';
@@ -153,7 +148,6 @@ export default {
     },
     up: {
       type: [Number, String],
-      default: 0,
       required: false,
       validator(value) {
         return typeof value === 'number' || typeof value === 'string';
@@ -161,7 +155,6 @@ export default {
     },
     down: {
       type: [Number, String],
-      default: 0,
       required: false,
       validator(value) {
         return typeof value === 'number' || typeof value === 'string';
@@ -169,7 +162,6 @@ export default {
     },
     left: {
       type: [Number, String],
-      default: 0,
       required: false,
       validator(value) {
         return typeof value === 'number' || typeof value === 'string';
@@ -177,7 +169,6 @@ export default {
     },
     right: {
       type: [Number, String],
-      default: 0,
       required: false,
       validator(value) {
         return typeof value === 'number' || typeof value === 'string';
@@ -185,7 +176,6 @@ export default {
     },
     transformRotate: {
       type: [Number, String],
-      default: 0,
       required: false,
       validator(value) {
         return (typeof value === 'number' || typeof value === 'string');
@@ -193,7 +183,6 @@ export default {
     },
     transformFlip: {
       type: [Array, String],
-      default: '',
       required: false,
       validator(value) {
         let nonOk = 0;
@@ -209,16 +198,13 @@ export default {
     },
     maskType: {
       type: String,
-      default: '',
       required: false,
       validator(value) {
-        if (value) return ['fas', 'far', 'fab', 'fal'].indexOf(value) !== -1;
-        else return true;
+        return ['fas', 'far', 'fab', 'fal'].indexOf(value) !== -1;
       },
     },
     mask: {
       type: String,
-      default: '',
       required: false,
       validator(value) {
         return typeof value === 'string';
@@ -242,7 +228,6 @@ export default {
     },
     iconId: {
       type: String,
-      default: '',
       required: false,
       validator(value) {
         return typeof value === 'string';
@@ -250,7 +235,6 @@ export default {
     },
     otherClasses: {
       type: String,
-      default: '',
       required: false,
       validator(value) {
         return typeof value === 'string';
