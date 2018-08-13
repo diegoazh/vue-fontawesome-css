@@ -50,7 +50,7 @@ export default {
       validator(value) {
         let notOk = 0;
         value.forEach((el) => {
-          if (!el.icon || !el.text) notOk++;
+          if (!el.icon || !el.text) notOk++; // TODO (Diego): Improbe validation, icon will be an object and text a string
         });
         return Boolean(!notOk);
       },
