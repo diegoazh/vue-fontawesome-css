@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/diegoazh/vue-fontawesome-css",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.2.0",
     "@fortawesome/fontawesome-free-webfonts": "^1.0.5"
   },
   "devDependencies": {

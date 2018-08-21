@@ -31,6 +31,7 @@
           :mask="item.icon && item.icon.mask"
           :id="item.icon && item.icon.id"
           :class="item.icon && item.icon.class"
+          :style="item.icon && item.icon.style"
         />
       </span>
       {{ item.text }}

@@ -29,6 +29,7 @@
       :mask="icon && icon.mask"
       :id="icon && icon.id"
       :class="icon && icon.class"
+      :style="icon && icon.style"
     />
     <span v-if="text && text.message" :id="text.id"
       :class="['fa-layers-text', 'fa-inverse', parseClass(text.class)]"

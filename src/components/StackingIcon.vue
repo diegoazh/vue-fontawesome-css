@@ -29,6 +29,7 @@
       :mask="container && container.mask"
       :id="container && container.id"
       :class="container && container.class"
+      :style="container && container.style"
     />
     <v-icon
       :fas="icon && icon.fas"
@@ -59,6 +60,7 @@
       :mask="icon && icon.mask"
       :id="icon && icon.id"
       :class="icon && icon.class"
+      :style="icon && icon.style"
     />
   </span>
 </template>
